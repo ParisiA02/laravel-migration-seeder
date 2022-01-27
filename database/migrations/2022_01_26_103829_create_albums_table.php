@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlbumTable extends Migration
+class CreateAlbumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAlbumTable extends Migration
      */
     public function up()
     {
-        Schema::create('album', function (Blueprint $table) {
+        Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("name",20);
+            $table->string("name",40);
             $table->date("release_date");
             $table->tinyInteger('songs'); 
         });
@@ -29,6 +29,6 @@ class CreateAlbumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('album');
+        Schema::dropIfExists('albums');
     }
 }
